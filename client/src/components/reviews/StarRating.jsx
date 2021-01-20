@@ -3,7 +3,7 @@ import StarInstance from './StarInstance.jsx';
 
 const StarsRating = () => {
   return (
-    <div role="group">
+    <div role="group" className="stars_and_average_star_rating_container">
       <span>
         <StarInstance />
         <StarInstance />

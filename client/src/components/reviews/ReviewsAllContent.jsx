@@ -1,6 +1,8 @@
 import React from 'react';
 import StarsRating from './StarRating.jsx';
 import RatingDistribution from './RatingDistribution.jsx';
+import Pros from './Pros.jsx';
+import Cons from './Cons.jsx';
 
 const ReviewsAllContent = () => {
   return (
@@ -9,6 +11,10 @@ const ReviewsAllContent = () => {
         <div className="left_ratings_container">
           <StarsRating />
           <RatingDistribution />
+        </div>
+        <div className="pros_and_cons_container">
+          <Pros />
+          <Cons />
         </div>
       </div>
     </div>
