@@ -2,8 +2,7 @@ import React from 'react';
 
 const Pros = () => {
   return (
-    <div className="pros_container">
-      <div className="pros_text">PROS</div>
+    <div className="pros_text">PROS
       <div className="pros_satisfaction_container">
         <span id="satisfaction_text">Satisfaction</span>
         <span> 49 reviews</span>
