@@ -63,7 +63,7 @@ class ReviewsAllContent extends React.Component {
         <div className="filter_control_bar_container">
           <ControlBar />
         </div>
-        <ReviewList />
+        <ReviewList reviews={this.state.reviews} getReviews={this.getReviews}/>
       </div>
     )
   }

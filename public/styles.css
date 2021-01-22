@@ -254,3 +254,29 @@
   background-color: white;
 }
 
+.review_instance_main_container {
+  display: flex;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #F2F5F7;
+  border-style: solid;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review_instance_left_container {
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.review_instance_right_container {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
+
+.review_instance_helpfulness_container {
+  border-style: solid;
+}
+
