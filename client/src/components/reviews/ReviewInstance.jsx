@@ -1,5 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import FiveStar from './stars/FiveStar.jsx';
+import FourStar from './stars/FourStar.jsx';
+import ThreeStar from './stars/ThreeStar.jsx';
+import TwoStar from './stars/TwoStar.jsx';
+import OneStar from './stars/OneStar.jsx';
 
 class ReviewInstance extends React.Component {
   constructor(props) {
@@ -47,11 +52,23 @@ class ReviewInstance extends React.Component {
 
   render() {
     let { eachReview } = this.props;
+    let stars;
+    if (eachReview.stars === 5) {
+      stars = <FiveStar />;
+    } else if (eachReview.stars === 4) {
+      stars = <FourStar />;
+    } else if (eachReview.stars === 3) {
+      stars = <ThreeStar />;
+    } else if (eachReview.stars === 2) {
+      stars = <TwoStar />;
+    } else {
+      stars = <OneStar />;
+    }
     return (
       <div className="review_instance_main_container">
         <div className="review_instance_left_container">
           <div className="review_instance_stars_user_timestamp_container">
-            <span>★★★★★</span>
+            <span>{stars}</span>
             <span className="review_instance_user">{eachReview.user}</span>
             <span className="review_instance_timestamp"> · {eachReview.createdAt}</span>
           </div>
