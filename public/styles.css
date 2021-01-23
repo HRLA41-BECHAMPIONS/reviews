@@ -1,5 +1,5 @@
 .product-data-items-tablist {
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Knockout HTF30-JuniorWelterwt', sans-serif;
   border-style: solid;
   width: 51%;
   /* margin: auto; */
@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   /* height: 1000px; */
 }
-
+/* Knockout HTF49-Liteweight */
 .reviews-tab-container {
   color: black;
   font-size: 12px;
@@ -274,9 +274,119 @@
   display: flex;
   flex-direction: column;
   border-style: solid;
+  flex-basis: 40%;
 }
 
 .review_instance_helpfulness_container {
   border-style: solid;
+  display: flex;
+  align-items: center;
 }
 
+.review_instance_user {
+  color: #202342;
+  font-size: 10px;
+  margin-left: 18px;
+  font-weight: 500;
+}
+
+.review_instance_timestamp {
+  color: #707070;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.review_title_container {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #1e1c2c;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.review_description_container {
+  color: #707070;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.review_vote_yes, .review_vote_no, .review_vote_report {
+  border: 1px solid #939393!important;
+  border-radius: 50px!important;
+  color: #707070!important;
+  font-size: 7px;
+  padding: 4px 6px!important;
+  font-weight: 550;
+  margin-right: 5px;
+}
+
+.review_vote_yes:hover, .review_vote_no:hover, .review_vote_report:hover {
+  background: #c2c2c2;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.review_helpful_text {
+  color: #707070;
+  font-weight: 700;
+  font-size: 9px;
+  margin-right: 2px;
+  margin-left: 10px;
+}
+
+.quality_rating_bar_container {
+  display: flex;
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+
+.quality_rating_bar_1, .quality_rating_bar_2, .quality_rating_bar_3, .quality_rating_bar_4 {
+  border-style: solid;
+  width: 25%;
+  height: 4px;
+  display: inline-block;
+  border-color: #939393;
+  border-left: 1px;
+  border-width: thin;
+}
+
+.quality_rating_bar_1, .quality_rating_bar_2, .quality_rating_bar_3 {
+  border-right: 1.5px solid #939393;
+}
+
+.quality_rating_bar_1 {
+  border-radius: 25px 0px 0px 25px;
+}
+
+.quality_rating_bar_4 {
+  border-radius: 0px 25px 25px 0px;
+}
+
+.quality_rating_bar_4, .quality_rating_bar_2, .quality_rating_bar_3 {
+  border-left: 1px solid #ccc;
+}
+
+.rating_bar_value_red_dot {
+  width: 7px;
+  height: 7px;
+  /* border-style: transparent; */
+  border-radius: 50px;
+  background-color: #d4353f;
+  position: absolute;
+}
+
+.quality_text, .comfort_level_text, .fit_text {
+  color: #1e1c2c;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.quality_rating_poor_excellent_container {
+  color: #707070;
+  font-size: 7px;
+  display: flex;
+  justify-content: space-between;
+}

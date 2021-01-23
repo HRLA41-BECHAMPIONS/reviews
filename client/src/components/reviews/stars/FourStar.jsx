@@ -4,13 +4,13 @@ import EmptyStar from './EmptyStar.jsx';
 
 const FourStar = () => {
   return (
-    <div>
+    <span>
       <FilledStar />
       <FilledStar />
       <FilledStar />
       <FilledStar />
       <EmptyStar />
-    </div>
+    </span>
   )
 }
 

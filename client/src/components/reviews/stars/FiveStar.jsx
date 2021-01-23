@@ -1,16 +1,16 @@
 import React from 'react';
 import FilledStar from './FilledStar.jsx';
-import EmptyStar from './EmptyStar.jsx';
+
 
 const FiveStar = () => {
   return (
-    <div>
+    <span>
       <FilledStar />
       <FilledStar />
       <FilledStar />
       <FilledStar />
       <FilledStar />
-    </div>
+    </span>
   )
 }
 
