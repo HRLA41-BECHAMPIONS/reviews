@@ -136,7 +136,10 @@ class ReviewInstance extends React.Component {
         </div>
         <div className="review_instance_right_container">
           <div className="verified_purchaser_container">
-            verified purchaser
+            <img className="verified_purchaser_icon" src="https://www.champion.com/static/version1611225458/frontend/Hanes/champion/en_US/assets/images/icon-verified.png"></img>
+            <span className="verified_purchaser_text">
+              Verified Purchaser
+            </span>
           </div>
           <div className="review_quality_container">
             <div className="quality_text">
@@ -149,7 +152,7 @@ class ReviewInstance extends React.Component {
               <div className="quality_rating_bar_4"></div>
               <div className="rating_bar_value_red_dot" style={positionDotQuality}></div>
             </div>
-            <div className="quality_rating_poor_excellent_container">
+            <div className="quality_rating_poor_excellent_text_container">
               <span>Poor</span>
               <span>Excellent</span>
             </div>
@@ -165,6 +168,10 @@ class ReviewInstance extends React.Component {
               <div className="quality_rating_bar_4"></div>
               <div className="rating_bar_value_red_dot" style={positionDotComfortLevel}></div>
             </div>
+            <div className="comfort_level_rating_text_container">
+              <span>Uncomfortable</span>
+              <span>Comfortable</span>
+            </div>
           </div>
           <div className="review_fit_container">
             <div className="fit_text">
@@ -176,6 +183,10 @@ class ReviewInstance extends React.Component {
               <div className="quality_rating_bar_3"></div>
               <div className="quality_rating_bar_4"></div>
               <div className="rating_bar_value_red_dot" style={positionDotFit}></div>
+            </div>
+            <div className="fit_rating_text_container">
+              <span>Small</span>
+              <span>Big</span>
             </div>
           </div>
         </div>

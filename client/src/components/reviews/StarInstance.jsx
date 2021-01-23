@@ -2,7 +2,7 @@ import React from 'react';
 
 const StarInstance = () => {
   return (
-    <svg height="10" width="10" viewBox="0 0 25 25" className="star_instance" style={{paddingRight: "2px"}}>
+    <svg height="20" width="20" viewBox="0 0 25 25" className="star_instance" style={{paddingRight: "2px"}}>
       <defs>
         <linearGradient id="color1">
           <stop offset="100%" style={{stopColor: "rgb(212, 53, 63)"}}></stop>

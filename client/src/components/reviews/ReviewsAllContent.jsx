@@ -35,6 +35,7 @@ class ReviewsAllContent extends React.Component {
         console.log(err);
       })
   }
+
   render () {
     return (
       <div className="reviews_all_content">
@@ -45,13 +46,9 @@ class ReviewsAllContent extends React.Component {
             <StatsRecommendation />
           </div>
           <div className="pros_and_cons_container">
-            <div className="pros_container">
-              <Pros />
-            </div>
-            <div className="cons_container">
-              <Cons />
-              <SeeAllReviewsButton />
-            </div>
+            <Pros />
+            <Cons />
+            <SeeAllReviewsButton />
           </div>
         </div>
         <div className="reviews_action_bar_container">
