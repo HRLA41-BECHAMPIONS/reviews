@@ -18,6 +18,8 @@ class ReviewsAllContent extends React.Component {
     };
     //bind your stuff!!!
     this.getReviews = this.getReviews.bind(this);
+    this.getReviewsMostHelpful = this.getReviewsMostHelpful.bind(this);
+    this.getReviewsHighestRatings = this.getReviewsHighestRatings.bind(this);
   }
 
   componentDidMount() {
@@ -33,7 +35,31 @@ class ReviewsAllContent extends React.Component {
       })
       .catch((err) => {
         console.log(err);
+      });
+  }
+
+  getReviewsMostHelpful() {
+    axios.get('/bechampions/products/1/reviews/sortMostHelpful')
+      .then((response) => {
+        this.setState({
+          reviews: response.data
+        })
       })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  getReviewsHighestRatings() {
+    axios.get('/bechampions/products/1/reviews/sortHighestRatings')
+      .then((response) => {
+        this.setState({
+          reviews: response.data
+        })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render () {
@@ -57,7 +83,7 @@ class ReviewsAllContent extends React.Component {
             </div>
         </div>
         <div className="filter_control_bar_container">
-          <ControlBar />
+          <ControlBar sortMethods={[this.getReviews, this.getReviewsHighestRatings, this.getReviewsMostHelpful]}/>
         </div>
         <ReviewList reviews={this.state.reviews} getReviews={this.getReviews}/>
       </div>
