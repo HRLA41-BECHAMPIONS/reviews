@@ -16,9 +16,31 @@ app.listen(port, () => {
   console.log(`Listening at port ${port}`);
 });
 
-// retrieving all reviews for the specific product
+// retrieving all reviews for the specific product (default by most recent)
 app.get('/bechampions/products/:productId/reviews/', (req, res) => {
-  Review.find({ productId: req.params.productId })
+  Review.find({ productId: req.params.productId }).sort({createdAt: 'asc'})
+    .then((reviews) => {
+      res.status(200).send(reviews);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// retrieving all reviews for the specific product (highest rating to lowest)
+app.get('/bechampions/products/:productId/reviews/sortHighestRatings', (req, res) => {
+  Review.find({ productId: req.params.productId }).sort({stars: 'desc'})
+    .then((reviews) => {
+      res.status(200).send(reviews);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// retrieving all reviews for the specific product (most helpful)
+app.get('/bechampions/products/:productId/reviews/sortMostHelpful', (req, res) => {
+  Review.find({ productId: req.params.productId }).sort({yes: 'desc'})
     .then((reviews) => {
       res.status(200).send(reviews);
     })

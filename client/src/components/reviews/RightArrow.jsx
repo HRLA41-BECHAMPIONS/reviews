@@ -2,7 +2,7 @@ import React from 'react';
 
 const RightArrow = () => {
   return (
-    <svg className="right_arrow" width="6px" height="10px" viewBox="0 0 10 14">
+    <svg className="right_arrow" width="10px" height="14px" viewBox="0 0 10 14">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g transform="translate(-1323.000000, -332.000000)" fill="#939393">
             <g transform="translate(1186.000000, 330.000000)">

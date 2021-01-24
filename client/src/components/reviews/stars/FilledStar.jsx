@@ -2,7 +2,7 @@ import React from 'react';
 
 const FilledStar = () => {
   return (
-    <svg height="7" width="7" viewBox="0 0 25 25" className="star_instance" style={{paddingRight: "2px"}}>
+    <svg height="12" width="12" viewBox="0 0 25 25" className="star_instance" style={{paddingRight: "2px"}}>
       <defs>
         <linearGradient id="color2">
           <stop offset="100%" style={{stopColor: "rgb(212, 53, 63)"}}></stop>

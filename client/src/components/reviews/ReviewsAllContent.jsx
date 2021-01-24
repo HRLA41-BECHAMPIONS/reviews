@@ -48,7 +48,6 @@ class ReviewsAllContent extends React.Component {
           <div className="pros_and_cons_container">
             <Pros />
             <Cons />
-            <SeeAllReviewsButton />
           </div>
         </div>
         <div className="reviews_action_bar_container">

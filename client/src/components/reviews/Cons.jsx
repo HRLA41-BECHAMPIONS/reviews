@@ -10,6 +10,9 @@ const Cons = () => {
         <span> 6 reviews</span>
         <div className="disappointing_review">"I bought the purple hoodie and the logo on the skeep is almost peeled off and the strings are way to long very disappointing" (FULL REVIEW)</div>
       </div>
+      <div className="see_all_reviews_button_container">
+        <SeeAllReviewsButton />
+      </div>
     </div>
   )
 }

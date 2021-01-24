@@ -29,7 +29,7 @@ const reviewSchema = new mongoose.Schema({
     type: String,
   },
   createdAt: {
-    type: String,
+    type: Number,
   },
   user: {
     type: String,

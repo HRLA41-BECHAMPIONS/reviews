@@ -27,7 +27,7 @@ const createReview = () => {
   review.comfortLevel = randomizer(comfortLevel);
   review.fit = randomizer(fit);
   review.quality = randomizer(quality);
-  review.createdAt = randomizer(numbers).toString() + ' days ago';
+  review.createdAt = randomizer(numbers).toString();
   review.user = randomizer(users) + randomizer(numbers).toString();
   review.email = randomizer(users) + randomizer(numbers).toString() + randomizer(emails);
   review.yes = 0;

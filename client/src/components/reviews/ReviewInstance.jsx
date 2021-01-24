@@ -117,7 +117,7 @@ class ReviewInstance extends React.Component {
           <div className="review_instance_stars_user_timestamp_container">
             <span className="review_instance_stars">{stars}</span>
             <span className="review_instance_user">{eachReview.user}</span>
-            <span className="review_instance_timestamp"> · {eachReview.createdAt}</span>
+            <span className="review_instance_timestamp"> · {eachReview.createdAt} days ago</span>
           </div>
           <div className="review_title_container">
             {eachReview.title}
