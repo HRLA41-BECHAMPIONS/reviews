@@ -8,19 +8,20 @@ describe('randomizer function', () => {
 
 describe('createReview function', () => {
   test('function should return an object that represents a review with properties', () => {
-    expect(seed.createReview()).toHaveProperty('title');
-    expect(seed.createReview()).toHaveProperty('description');
-    expect(seed.createReview()).toHaveProperty('stars');
-    expect(seed.createReview()).toHaveProperty('user');
-    expect(seed.createReview()).toHaveProperty('productId');
-    expect(seed.createReview()).toHaveProperty('email');
-    expect(seed.createReview()).toHaveProperty('yes');
-    expect(seed.createReview()).toHaveProperty('no');
-    expect(seed.createReview()).toHaveProperty('report');
-    expect(seed.createReview()).toHaveProperty('comfortLevel');
-    expect(seed.createReview()).toHaveProperty('fit');
-    expect(seed.createReview()).toHaveProperty('quality');
-    expect(seed.createReview()).toHaveProperty('createdAt');
+    expect(seed.createBadReview()).toHaveProperty('title');
+    expect(seed.createBadReview()).toHaveProperty('description');
+    expect(seed.createBadReview()).toHaveProperty('stars');
+    expect(seed.createBadReview()).toHaveProperty('user');
+    expect(seed.createBadReview()).toHaveProperty('productId');
+    expect(seed.createBadReview()).toHaveProperty('email');
+    expect(seed.createBadReview()).toHaveProperty('yes');
+    expect(seed.createBadReview()).toHaveProperty('no');
+    expect(seed.createBadReview()).toHaveProperty('report');
+    expect(seed.createBadReview()).toHaveProperty('comfortLevel');
+    expect(seed.createBadReview()).toHaveProperty('fit');
+    expect(seed.createBadReview()).toHaveProperty('quality');
+    expect(seed.createBadReview()).toHaveProperty('createdAt');
+    expect(seed.createBadReview()).toHaveProperty('recommend');
   });
 });
 

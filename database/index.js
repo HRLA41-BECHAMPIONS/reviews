@@ -28,6 +28,9 @@ const reviewSchema = new mongoose.Schema({
   fit: {
     type: String,
   },
+  recommend: {
+    type: String,
+  },
   createdAt: {
     type: Number,
   },
@@ -55,4 +58,38 @@ const reviewSchema = new mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = Review;
+const questionSchema = new mongoose.Schema({
+  productId: Number,
+  description: String,
+  createdAt: Number,
+  user: String,
+  email: String,
+  responseCount: Number
+});
+
+const Question = mongoose.model('Question', questionSchema);
+
+const answerSchema = new mongoose.Schema({
+  description: String,
+  createdAt: Number,
+  user: String,
+  email: String,
+  yes: {
+    type: Number,
+    default: 0
+  },
+  no: {
+    type: Number,
+    default: 0,
+  },
+  report: {
+    type: String,
+    default: 'Report',
+  }
+})
+
+const Answer = mongoose.model('Answer', answerSchema);
+
+module.exports.Review = Review;
+module.exports.Question = Question;
+module.exports.Answer = Answer;

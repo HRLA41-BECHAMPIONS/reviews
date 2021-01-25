@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const Review = require('../database/index.js');
+const dbHelpers = require('../database/index.js');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.listen(port, () => {
 
 // retrieving all reviews for the specific product (default by most recent)
 app.get('/bechampions/products/:productId/reviews/', (req, res) => {
-  Review.find({ productId: req.params.productId }).sort({createdAt: 'asc'})
+  dbHelpers.Review.find({ productId: req.params.productId }).sort({createdAt: 'asc'})
     .then((reviews) => {
       res.status(200).send(reviews);
     })
@@ -29,7 +29,7 @@ app.get('/bechampions/products/:productId/reviews/', (req, res) => {
 
 // retrieving all reviews for the specific product (highest rating to lowest)
 app.get('/bechampions/products/:productId/reviews/sortHighestRatings', (req, res) => {
-  Review.find({ productId: req.params.productId }).sort({stars: 'desc'})
+  dbHelpers.Review.find({ productId: req.params.productId }).sort({stars: 'desc'})
     .then((reviews) => {
       res.status(200).send(reviews);
     })
@@ -40,7 +40,7 @@ app.get('/bechampions/products/:productId/reviews/sortHighestRatings', (req, res
 
 // retrieving all reviews for the specific product (most helpful)
 app.get('/bechampions/products/:productId/reviews/sortMostHelpful', (req, res) => {
-  Review.find({ productId: req.params.productId }).sort({yes: 'desc'})
+  dbHelpers.Review.find({ productId: req.params.productId }).sort({yes: 'desc'})
     .then((reviews) => {
       res.status(200).send(reviews);
     })
@@ -52,7 +52,7 @@ app.get('/bechampions/products/:productId/reviews/sortMostHelpful', (req, res) =
 // voting yes for a review being helpful
 app.put('/bechampions/products/:productId/reviews/:_id/yes', (req, res) => {
   // eslint-disable-next-line no-underscore-dangle
-  Review.update({ _id: req.params._id }, { $inc: { yes: 1 } })
+  dbHelpers.Review.update({ _id: req.params._id }, { $inc: { yes: 1 } })
     .then(() => {
       res.status(200).send('Updated selected review');
     })
@@ -64,7 +64,7 @@ app.put('/bechampions/products/:productId/reviews/:_id/yes', (req, res) => {
 // voting no for a review not being helpful
 app.put('/bechampions/products/:productId/reviews/:_id/no', (req, res) => {
   // eslint-disable-next-line no-underscore-dangle
-  Review.update({ _id: req.params._id }, { $inc: { no: 1 } })
+  dbHelpers.Review.update({ _id: req.params._id }, { $inc: { no: 1 } })
     .then(() => {
       res.status(200).send('Updated selected review');
     })
@@ -76,7 +76,7 @@ app.put('/bechampions/products/:productId/reviews/:_id/no', (req, res) => {
 // reporting a review
 app.put('/bechampions/products/:productId/reviews/:_id/reported', (req, res) => {
   // eslint-disable-next-line no-underscore-dangle
-  Review.update({ _id: req.params._id }, { report: 'Reported' })
+  dbHelpers.Review.update({ _id: req.params._id }, { report: 'Reported' })
     .then(() => {
       res.status(200).send('Updated selected review');
     })
@@ -93,9 +93,21 @@ app.post('/bechampions/products/:productId/reviews/writeReview', (req, res) => {
   const review = {
     productId: req.params.productId, title, description, stars, comfortLevel, fit, user, email,
   };
-  Review.create(review)
+  dbHelpers.Review.create(review)
     .then(() => {
       res.status(200).send('Added review!');
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// -------- Questions APIs ------------- //
+
+app.get('/bechampions/products/:productId/questions/', (req, res) => {
+  dbHelpers.Question.find({ productId: req.params.productId })
+    .then((questions) => {
+      res.status(200).send(questions);
     })
     .catch((err) => {
       res.status(404).send(err);
