@@ -1,10 +1,10 @@
 .product-data-items-tablist {
   font-family: 'Knockout HTF30-JuniorWelterwt', 'Arial', sans-serif;
   border-style: solid;
-  width: 51%;
-  /* margin: auto; */
-  margin-left: auto;
-  margin-right: auto;
+  width: 50%;
+  margin: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +19,7 @@
   border-color: #F2F5F7;
   border-style: solid;
   border-radius: 25px 0px 0px 25px;
-  width: 49.4%;
+  width: 49.5%;
   text-align: center;
   line-height: 1.5;
   /* position: relative;
@@ -29,7 +29,7 @@
 .questions-tab-container {
   /* float: right; */
   text-align: center;
-  width: 49.4%;
+  width: 49.5%;
   border-radius: 0px 25px 25px 0px;
   background-color: #F2F5F7;
   color: #707070;
@@ -41,7 +41,8 @@
   border-style: solid;
 }
 .reviews-tab-container:hover, .questions-tab-container:hover {
-  color: red
+  color: red;
+  cursor: pointer;
 }
 
 .reviews_all_content {
@@ -436,3 +437,14 @@ meter::-webkit-meter-optimum-value {
   background-color: red;
   border-radius: 50px;
  }
+
+.questions-all-content-container {
+  display: flex;
+  padding: 50px 40px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ask-question-container {
+  align-self: flex-end;
+}

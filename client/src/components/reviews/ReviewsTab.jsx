@@ -4,9 +4,9 @@ import React from 'react';
 //   color: 'black',
 //   font:
 // }
-const ReviewsTab = () => {
+const ReviewsTab = (props) => {
   return (
-    <div className="reviews-tab-container">
+    <div className="reviews-tab-container" onClick={props.toggleReviews} >
       <a className="reviews-tab">REVIEWS</a>
     </div>
   )
