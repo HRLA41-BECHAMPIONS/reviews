@@ -17,7 +17,7 @@ class ReviewsAllContent extends React.Component {
     this.state = {
       reviews: [],
       start: 0,
-      end: 7
+      end: 6
     };
     //bind your stuff!!!
     this.getReviews = this.getReviews.bind(this);
@@ -69,7 +69,7 @@ class ReviewsAllContent extends React.Component {
 
   nextPage() {
     this.setState((state) => ({
-      start: state.start + 29,
+      start: state.start + 6,
       end: state.end + 29
     }), () => {
       console.log(this.state)
@@ -78,7 +78,7 @@ class ReviewsAllContent extends React.Component {
 
   previousPage() {
     this.setState((state) => ({
-      start: state.start - 29,
+      start: state.start - 6,
       end: state.end - 29
     }), () => {
       console.log(this.state)

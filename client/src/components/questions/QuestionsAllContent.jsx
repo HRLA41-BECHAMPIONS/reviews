@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import QuestionsList from './QuestionsList.jsx';
 import QuestionsPageBar from './QuestionsPageBar.jsx';
+import AnswerQuestionModal from './AnswerQuestionModal.jsx';
 
 class QuestionsAllContent extends React.Component {
   constructor() {
@@ -9,7 +10,8 @@ class QuestionsAllContent extends React.Component {
     this.state = {
       questions: [],
       start: 0,
-      end: 10
+      end: 10,
+      currentQuestion: {},
     };
     this.getQuestions = this.getQuestions.bind(this);
     this.getResponses = this.getResponses.bind(this);
@@ -25,7 +27,8 @@ class QuestionsAllContent extends React.Component {
     axios.get('/bechampions/products/1/questions/')
       .then((response) => {
         this.setState({
-          questions: response.data
+          questions: response.data,
+          currentQuestion: response.data[0]
         });
       })
       .catch((err) => {
@@ -66,6 +69,7 @@ class QuestionsAllContent extends React.Component {
         <div className="ask-question-button-container">
           <button className="ask-question-button">ASK A PRODUCT QUESTION</button>
         </div>
+        <AnswerQuestionModal currentQuestion={this.state.currentQuestion}/>
         <QuestionsList questions={displayQuestions}/>
         <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage}/>
       </div>
