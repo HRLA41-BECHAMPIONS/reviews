@@ -104,10 +104,22 @@ app.post('/bechampions/products/:productId/reviews/writeReview', (req, res) => {
 
 // -------- Questions APIs ------------- //
 
+// get all questions
 app.get('/bechampions/products/:productId/questions/', (req, res) => {
   dbHelpers.Question.find({ productId: req.params.productId })
     .then((questions) => {
       res.status(200).send(questions);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// to get one response or a list of responses...?
+app.get('/bechampions/products/:productId/questions/:questionId/:answerId', (req, res) => {
+  dbHelpers.Answer.find({ productId: req.params.productId })
+    .then((answer) => {
+      res.status(200).send(answer);
     })
     .catch((err) => {
       res.status(404).send(err);

@@ -34,10 +34,10 @@ const generateAnswers= () => {
 
 const sampleData = generateAnswers();
 
-dbHelpers.Answer.create(sampleData)
-  .then(() => {
-    console.log('Seeded Database!');
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// dbHelpers.Answer.create(sampleData)
+//   .then(() => {
+//     console.log('Seeded Database!');
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });

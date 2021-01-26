@@ -9,6 +9,8 @@
   },
   "scripts": {
     "start": "nodemon server/server.js",
+    "seedQuestions": "node database/seedQuestionsResponses.js",
+    "seedReviews": "node database/seedReviews.js",
     "test": "jest --watch",
     "build": "webpack --watch"
   },

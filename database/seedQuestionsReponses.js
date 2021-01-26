@@ -6,11 +6,23 @@ const users = ['DoubleCheckYouAreNotZoomedInWhileDoingCSS','iLOVEcss', 'scrimba'
 const emails = ['@yahoo.com', '@gmail.com', '@outlook.com', '@aol.com', '@microsoft.com', '@hackreactor.com'];
 const numbers = [3, 5, 10, 203, 121, 557, 32, 88, 433, 23, 2, 4, 8, 093, 3465, 123, 11, 17, 35, 91, 56, 69, 48, 57, 1];
 const colors = ['red', 'black', 'purple', 'orange', 'yellow', 'pink', 'maroon', 'olive', 'blue', 'turquoise', 'white'];
+const responses = ['Yes this color is available', 'No this color is not available for this product']
 const responseCounter = [1, 2];
 
 const randomizer = (arr) => {
   var output = arr[Math.floor(Math.random() * arr.length)];
   return output;
+}
+
+const createAnswer = () => {
+  let answer = {};
+
+  answer.description = randomizer(responses);
+  answer.createdAt = Math.floor(Math.random() * 100);
+  answer.user = randomizer(users) + Math.floor(Math.random() * 100).toString();
+  answer.email = randomizer(users) + randomizer(numbers).toString() + randomizer(emails);
+
+  return answer;
 }
 
 const createQuestion = () => {
@@ -21,17 +33,18 @@ const createQuestion = () => {
   question.createdAt = randomizer(numbers);
   question.user = randomizer(users) + randomizer(numbers).toString();
   question.email = randomizer(users) + randomizer(numbers).toString() + randomizer(emails);
-  question.responseCount = randomizer(responseCounter);
+  question.response = [createAnswer()];
+  question.responseCount = question.response.length;
 
   return question;
 }
 
 const generateQuestions = () => {
-  const responses = [];
+  const questions = [];
   for (var i = 0; i < 50; i++) {
-    responses.push(createQuestion());
+    questions.push(createQuestion());
   }
-  return responses;
+  return questions;
 }
 
 const sampleData = generateQuestions();
