@@ -9,17 +9,22 @@ import StatsRecommendation from './StatsRecommendation.jsx';
 import SeeAllReviewsButton from './SeeAllReviews.jsx';
 import ControlBar from './ControlBar.jsx';
 import ReviewList from './ReviewList.jsx';
+import ReviewsPageBar from './ReviewsPageBar.jsx';
 
 class ReviewsAllContent extends React.Component {
   constructor() {
     super();
     this.state = {
-      reviews: []
+      reviews: [],
+      start: 0,
+      end: 7
     };
     //bind your stuff!!!
     this.getReviews = this.getReviews.bind(this);
     this.getReviewsMostHelpful = this.getReviewsMostHelpful.bind(this);
     this.getReviewsHighestRatings = this.getReviewsHighestRatings.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+    this.previousPage = this.previousPage.bind(this);
   }
 
   componentDidMount() {
@@ -62,7 +67,28 @@ class ReviewsAllContent extends React.Component {
       });
   }
 
+  nextPage() {
+    this.setState((state) => ({
+      start: state.start + 29,
+      end: state.end + 29
+    }), () => {
+      console.log(this.state)
+    })
+  }
+
+  previousPage() {
+    this.setState((state) => ({
+      start: state.start - 29,
+      end: state.end - 29
+    }), () => {
+      console.log(this.state)
+    })
+  }
+
   render () {
+    let { reviews, start, end } = this.state;
+    let displayReviews = reviews.slice(start, end);
+
     return (
       <div className="reviews_all_content">
         <div className="review_highlights_container">
@@ -85,7 +111,8 @@ class ReviewsAllContent extends React.Component {
         <div className="filter_control_bar_container">
           <ControlBar sortMethods={[this.getReviews, this.getReviewsHighestRatings, this.getReviewsMostHelpful]}/>
         </div>
-        <ReviewList reviews={this.state.reviews} getReviews={this.getReviews}/>
+        <ReviewList reviews={displayReviews} getReviews={this.getReviews}/>
+        <ReviewsPageBar reviews={this.state.reviews} nextPage={this.nextPage} previousPage={this.previousPage}/>
       </div>
     )
   }

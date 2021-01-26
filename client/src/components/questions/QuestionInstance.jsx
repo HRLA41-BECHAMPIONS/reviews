@@ -20,6 +20,9 @@ class QuestionInstance extends React.Component {
         <div className="question-instance-answer-question-button-container">
           <button className="answer-this-question-button">answer this question</button>
         </div>
+        <div className="question-instance-response-container">
+          {eachQuestion.response[0].description}
+        </div>
       </div>
     )
   }
