@@ -19,7 +19,7 @@
   border-color: #F2F5F7;
   border-style: solid;
   border-radius: 25px 0px 0px 25px;
-  width: 49.5%;
+  width: 49.6%;
   text-align: center;
   line-height: 1.5;
   /* position: relative;
@@ -29,7 +29,7 @@
 .questions-tab-container {
   /* float: right; */
   text-align: center;
-  width: 49.5%;
+  width: 49.7%;
   border-radius: 0px 25px 25px 0px;
   background-color: #F2F5F7;
   color: #707070;
@@ -525,4 +525,59 @@ meter::-webkit-meter-optimum-value {
   font-size: 20px;
   /* padding: 10px; */
   /* margin-left: 25px; */
+}
+
+.answer-question-modal-container {
+  display: flex;
+  z-index: 1;
+  border: solid ;
+  background-color: #fff;
+  flex-direction: column;
+}
+
+.answer-question-modal-main-content {
+  padding: 20px;
+  border: solid;
+}
+
+.modal-question-container {
+  border: solid #;
+  display: flex;
+  justify-content: space-between;
+  background: #F2F5F7;
+  padding: 10px;
+}
+.post-answer-text {
+  padding: 20px 12px!important;
+  font-size: 40px!important;
+}
+
+
+.modal-question-user {
+  color: #202342;
+  font-size: 20px;
+}
+
+.modal-question-timestamp {
+  color: #939393;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.modal-response-count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-question-description, .modal-question-response-count-text {
+  color: #1e1c2c!important;
+  font-size: 20px!important;
+  line-height: 24px!important;
+  text-transform: uppercase!important;
+}
+
+.modal-question-response-count-answer-text {
+  color: #939393;
+  font-size: 15px;
 }
