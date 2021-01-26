@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 
-const port = 4123;
+const port = 3040;
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
