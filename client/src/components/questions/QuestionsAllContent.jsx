@@ -24,7 +24,7 @@ class QuestionsAllContent extends React.Component {
   }
 
   getQuestions() {
-    axios.get('/bechampions/products/1/questions/')
+    axios.get('/api/bechampions/products/1/questions/')
       .then((response) => {
         this.setState({
           questions: response.data,

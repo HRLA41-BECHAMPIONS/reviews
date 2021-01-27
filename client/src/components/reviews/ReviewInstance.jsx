@@ -25,7 +25,7 @@ class ReviewInstance extends React.Component {
 
   voteYes() {
     let { eachReview } = this.props;
-    axios.put(`/bechampions/products/${eachReview.productId}/reviews/${eachReview._id}/yes`)
+    axios.put(`/api/bechampions/products/${eachReview.productId}/reviews/${eachReview._id}/yes`)
       .then(() => {
         this.props.getReviews();
       })
@@ -36,7 +36,7 @@ class ReviewInstance extends React.Component {
 
   voteNo() {
     let { eachReview } = this.props;
-    axios.put(`/bechampions/products/${eachReview.productId}/reviews/${eachReview._id}/no`)
+    axios.put(`/api/bechampions/products/${eachReview.productId}/reviews/${eachReview._id}/no`)
       .then(() => {
         this.props.getReviews();
       })
@@ -47,7 +47,7 @@ class ReviewInstance extends React.Component {
 
   reportReview() {
     let { eachReview } = this.props;
-    axios.put(`/bechampions/products/${eachReview.productId}/reviews/${eachReview._id}/reported`)
+    axios.put(`/api/bechampions/products/${eachReview.productId}/reviews/${eachReview._id}/reported`)
       .then(() => {
         this.props.getReviews();
       })

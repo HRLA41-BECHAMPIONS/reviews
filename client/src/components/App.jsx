@@ -3,6 +3,7 @@ import ReviewsAllContent from './reviews/ReviewsAllContent.jsx';
 import ReviewsTab from './reviews/ReviewsTab.jsx';
 import QuestionsTab from './questions/QuestionsTab.jsx';
 import QuestionsAllContent from './questions/QuestionsAllContent.jsx';
+import './styles.css';
 
 class App extends React.Component {
   constructor(props) {
