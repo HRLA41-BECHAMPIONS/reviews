@@ -66,7 +66,9 @@ class QuestionsAllContent extends React.Component {
           <div className="ask-question-button-container">
             <button className="ask-question-button">ASK A PRODUCT QUESTION</button>
           </div>
-          <AnswerQuestionModal currentQuestion={currentQuestion} />
+          <div className="answer-question-modal-background-container">
+            <AnswerQuestionModal currentQuestion={currentQuestion} />
+          </div>
           <QuestionsList questions={displayQuestions} />
           <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage} />
         </div>

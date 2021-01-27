@@ -90,7 +90,6 @@ class AnswerQuestionModal extends React.Component {
                 <button className="post-answer-button">post answer</button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
