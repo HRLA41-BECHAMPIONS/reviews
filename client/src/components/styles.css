@@ -527,7 +527,7 @@ meter::-webkit-meter-optimum-value {
   /* margin-left: 25px; */
 }
 
-.answer-question-modal-container {
+.answer-question-modal-main-container {
   display: flex;
   z-index: 1;
   border: solid ;
@@ -535,18 +535,26 @@ meter::-webkit-meter-optimum-value {
   flex-direction: column;
 }
 
-.answer-question-modal-main-content {
+.modal-main-content {
   padding: 20px;
   border: solid;
 }
 
 .modal-question-container {
-  border: solid #;
+  border: solid;
   display: flex;
   justify-content: space-between;
   background: #F2F5F7;
   padding: 10px;
+  flex-direction: column;
+  height: 200px; /*placeholder*/
 }
+
+.modal-question-top-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .post-answer-text {
   padding: 20px 12px!important;
   font-size: 40px!important;
@@ -580,4 +588,9 @@ meter::-webkit-meter-optimum-value {
 .modal-question-response-count-answer-text {
   color: #939393;
   font-size: 15px;
+}
+
+.modal-response-container {
+  background: #fff;
+  border: solid;
 }

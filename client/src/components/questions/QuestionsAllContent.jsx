@@ -14,7 +14,6 @@ class QuestionsAllContent extends React.Component {
       currentQuestion: {},
     };
     this.getQuestions = this.getQuestions.bind(this);
-    this.getResponses = this.getResponses.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
   }
@@ -36,12 +35,6 @@ class QuestionsAllContent extends React.Component {
       });
   }
 
-  getResponses() {
-    axios.get()
-      .then()
-      .catch()
-  }
-
   nextPage() {
     this.setState((state) => ({
       start: state.start + 10,
@@ -61,7 +54,7 @@ class QuestionsAllContent extends React.Component {
   }
 
   render() {
-    let { questions, start, end} = this.state;
+    let { questions, start, end, currentQuestion} = this.state;
     let displayQuestions = questions.slice(start, end);
 
     return (
@@ -69,7 +62,7 @@ class QuestionsAllContent extends React.Component {
         <div className="ask-question-button-container">
           <button className="ask-question-button">ASK A PRODUCT QUESTION</button>
         </div>
-        <AnswerQuestionModal currentQuestion={this.state.currentQuestion}/>
+        <AnswerQuestionModal currentQuestion={currentQuestion}/>
         <QuestionsList questions={displayQuestions}/>
         <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage}/>
       </div>
