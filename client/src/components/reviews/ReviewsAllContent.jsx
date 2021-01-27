@@ -32,7 +32,7 @@ class ReviewsAllContent extends React.Component {
   }
 
   getReviews() {
-    axios.get('/bechampions/products/1/reviews/')
+    axios.get('/api/bechampions/products/1/reviews/')
       .then((response) => {
         this.setState({
           reviews: response.data
@@ -44,7 +44,7 @@ class ReviewsAllContent extends React.Component {
   }
 
   getReviewsMostHelpful() {
-    axios.get('/bechampions/products/1/reviews/sortMostHelpful')
+    axios.get('/api/bechampions/products/1/reviews/sortMostHelpful')
       .then((response) => {
         this.setState({
           reviews: response.data
@@ -56,7 +56,7 @@ class ReviewsAllContent extends React.Component {
   }
 
   getReviewsHighestRatings() {
-    axios.get('/bechampions/products/1/reviews/sortHighestRatings')
+    axios.get('/api/bechampions/products/1/reviews/sortHighestRatings')
       .then((response) => {
         this.setState({
           reviews: response.data

@@ -16,7 +16,7 @@ class RatingDistribution extends React.Component {
   }
 
   getReviews() {
-    axios.get('/bechampions/products/1/reviews/')
+    axios.get('/api/bechampions/products/1/reviews/')
       .then((response) => {
         this.setState({
           reviews: response.data
