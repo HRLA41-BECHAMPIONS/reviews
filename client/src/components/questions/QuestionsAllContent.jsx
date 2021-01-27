@@ -11,7 +11,8 @@ class QuestionsAllContent extends React.Component {
       questions: [],
       start: 0,
       end: 10,
-      currentQuestion: {},
+      currentQuestion: {response: [{user: 'componentDidMountDidNotRunYet'}]},
+      loading: false
     };
     this.getQuestions = this.getQuestions.bind(this);
     this.nextPage = this.nextPage.bind(this);
@@ -27,7 +28,10 @@ class QuestionsAllContent extends React.Component {
       .then((response) => {
         this.setState({
           questions: response.data,
-          currentQuestion: response.data[0]
+          currentQuestion: response.data[0],
+          loading: true
+        }, () => {
+          // console.log(this.state);
         });
       })
       .catch((err) => {
@@ -54,19 +58,21 @@ class QuestionsAllContent extends React.Component {
   }
 
   render() {
-    let { questions, start, end, currentQuestion} = this.state;
+    let { questions, start, end, currentQuestion, loading } = this.state;
     let displayQuestions = questions.slice(start, end);
 
-    return (
-      <div className="questions-all-content-container">
-        <div className="ask-question-button-container">
-          <button className="ask-question-button">ASK A PRODUCT QUESTION</button>
+      return (
+        <div className="questions-all-content-container">
+          <div className="ask-question-button-container">
+            <button className="ask-question-button">ASK A PRODUCT QUESTION</button>
+          </div>
+          <AnswerQuestionModal currentQuestion={currentQuestion} />
+          <QuestionsList questions={displayQuestions} />
+          <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage} />
         </div>
-        <AnswerQuestionModal currentQuestion={currentQuestion}/>
-        <QuestionsList questions={displayQuestions}/>
-        <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage}/>
-      </div>
-    )
+      )
+
+
   }
 }
 
