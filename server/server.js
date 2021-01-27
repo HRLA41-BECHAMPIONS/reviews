@@ -115,9 +115,34 @@ app.get('/api/bechampions/products/:productId/questions/', (req, res) => {
     });
 });
 
-// to get one response or a list of responses...?
-app.get('/api/bechampions/products/:productId/questions/:questionId/:answerId', (req, res) => {
-  dbHelpers.Answer.find({ productId: req.params.productId })
+// to vote yes on a helpful response
+app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseId/yes', (req, res) => {
+  console.log(req.params)
+  dbHelpers.Question.updateOne({ '_id': req.params._questionId, 'response._id': req.params._responseId}, { $inc: {'response.$.yes': 1}})
+    .then((answer) => {
+      res.status(200).send(answer);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// vote no on a response
+app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseId/no', (req, res) => {
+  console.log(req.params)
+  dbHelpers.Question.updateOne({ '_id': req.params._questionId, 'response._id': req.params._responseId}, { $inc: {'response.$.no': 1}})
+    .then((answer) => {
+      res.status(200).send(answer);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
+// report a response
+app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseId/report', (req, res) => {
+  console.log(req.params)
+  dbHelpers.Question.updateOne({ '_id': req.params._questionId, 'response._id': req.params._responseId}, { 'response.$.report': 'Reported'})
     .then((answer) => {
       res.status(200).send(answer);
     })

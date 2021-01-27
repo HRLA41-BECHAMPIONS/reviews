@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class AnswerQuestionModal extends React.Component {
   constructor(props) {
@@ -6,18 +7,55 @@ class AnswerQuestionModal extends React.Component {
     this.state = {
 
     }
-
+    this.voteYes = this.voteYes.bind(this);
+    this.voteNo = this.voteNo.bind(this);
+    this.reportResponse = this.reportResponse.bind(this);
   }
 
+  voteYes() {
+    let { currentQuestion, updateQuestions } = this.props;
+    axios.put(`/api/bechampions/products/${currentQuestion.productId}/questions/${currentQuestion._id}/${currentQuestion.response[0]._id}/yes`)
+      .then(() => {
+        updateQuestions(currentQuestion._id);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  voteNo() {
+    let { currentQuestion, updateQuestions } = this.props;
+    axios.put(`/api/bechampions/products/${currentQuestion.productId}/questions/${currentQuestion._id}/${currentQuestion.response[0]._id}/no`)
+      .then(() => {
+        updateQuestions(currentQuestion._id);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  reportResponse() {
+    let { currentQuestion, updateQuestions } = this.props;
+    axios.put(`/api/bechampions/products/${currentQuestion.productId}/questions/${currentQuestion._id}/${currentQuestion.response[0]._id}/report`)
+      .then(() => {
+        updateQuestions(currentQuestion._id);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   render() {
 
-    let { currentQuestion } = this.props;
+    let { currentQuestion, closeModal } = this.props;
 
     return (
       <div className="answer-question-modal-main-container">
         <div className="post-answer-text">
           Post Answer
+        </div>
+        <div className="close-modal-button-container">
+          <button className="close-modal-button" onClick={closeModal}> ✘ </button>
         </div>
         <div className="modal-main-content">
           <div className="modal-question-response-container">
@@ -50,13 +88,13 @@ class AnswerQuestionModal extends React.Component {
                 <div className="modal-response-helpfulness-container">
                   <span className="modal-response-helpful-text">Helpful?</span>
                   <span className="modal-helpful-vote-yes-container">
-                    <button className="modal-vote-yes-button">Yes · {currentQuestion.response[0].yes}</button>
+                    <button className="modal-vote-yes-button" onClick={this.voteYes}>Yes · {currentQuestion.response[0].yes}</button>
                   </span>
                   <span className="modal-helpful-vote-no-container">
-                    <button className="modal-vote-no-button">No · {currentQuestion.response[0].no}</button>
+                    <button className="modal-vote-no-button" onClick={this.voteNo}>No · {currentQuestion.response[0].no}</button>
                   </span>
                   <span className="modal-helpful-vote-report-container">
-                    <button className="modal-vote-report-button">{currentQuestion.response[0].report}</button>
+                    <button className="modal-vote-report-button" onClick={this.reportResponse}>{currentQuestion.response[0].report}</button>
                   </span>
                 </div>
               </div>

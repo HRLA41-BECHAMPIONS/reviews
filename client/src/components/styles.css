@@ -535,6 +535,7 @@ meter::-webkit-meter-optimum-value {
   flex-direction: column;
   width: 50%;
   margin-left: 25%;
+  position: relative;
 }
 
 .modal-main-content {
@@ -736,4 +737,21 @@ meter::-webkit-meter-optimum-value {
   height: 100%;
   top: 0;
   background-color: rgba(0, 0, 0, 0.79);
+}
+
+.close-modal-button-container {
+  position: absolute;
+  right: 0;
+}
+
+.close-modal-button {
+  background-color: #767676!important;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  /* padding: 3px; */
+  padding: 0px 6px;
+  margin: 2px;
+  font-weight: bold;
+  font-size: 20px;
 }

@@ -4,7 +4,7 @@ import ReviewsTab from './reviews/ReviewsTab.jsx';
 import QuestionsTab from './questions/QuestionsTab.jsx';
 import QuestionsAllContent from './questions/QuestionsAllContent.jsx';
 import './styles.css';
-import AnswerQuestionModal from './questions/AnswerQuestionModal.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -41,7 +41,6 @@ class App extends React.Component {
         <ReviewsTab toggleReviews={this.toggleReviews}/>
         <QuestionsTab value="questions" toggleQuestions={this.toggleQuestions}/>
         {content}
-        {/* <AnswerQuestionModal /> */}
       </div>
     )
   }
