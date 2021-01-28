@@ -1,16 +1,12 @@
 .product-data-items-tablist {
   font-family: 'Knockout HTF30-JuniorWelterwt', 'Arial', sans-serif;
-  border-style: solid;
   width: 50%;
   margin: 25%;
-  /* margin-left: auto;
-  margin-right: auto; */
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  /* height: 1000px; */
 }
-/* Knockout HTF49-Liteweight */
+
 .reviews-tab-container {
   color: black;
   font-size: 22px;
@@ -22,12 +18,9 @@
   width: 49.6%;
   text-align: center;
   line-height: 1.5;
-  /* position: relative;
-  float: left; */
 }
 
 .questions-tab-container {
-  /* float: right; */
   text-align: center;
   width: 49.7%;
   border-radius: 0px 25px 25px 0px;
@@ -55,7 +48,6 @@
 }
 
 .left_ratings_container {
-  /* width: 40%; */
   display: flex;
   flex-direction: column;
   flex-basis: 66%
@@ -152,10 +144,6 @@
   font-family: 'Knockout HTF49-Liteweight', 'Arial', sans-serif;
 }
 
-/* .quality_review, .satisfaction_review {
-  font-size: 16px;
-  font-weight: normal;
-} */
 .cons_container {
   width: 50%;
   padding-right: 4%;
@@ -189,7 +177,6 @@
   background-color: transparent;
   padding: 14px 9px;
   font-family: 'Knockout HTF30-JuniorWelterwt', 'Arial', sans-serif;
-  /* position: absolute; */
   bottom: 22%;
   right: 27%;
   border: 0;
@@ -250,6 +237,8 @@
 }
 
 .sort_by_dropdown_container {
+  display: flex;
+  justify-content: flex-end;
   float: right;
 }
 
@@ -507,7 +496,6 @@ meter::-webkit-meter-optimum-value {
 .questions-current-number-text {
   color: #939393;
   font-size: 20px;
-  /* padding: 10px; */
   margin-left: 25px;
 }
 
@@ -523,14 +511,11 @@ meter::-webkit-meter-optimum-value {
 .reviews-current-number-text {
   color: #939393;
   font-size: 20px;
-  /* padding: 10px; */
-  /* margin-left: 25px; */
 }
 
 .answer-question-modal-main-container {
   display: flex;
   z-index: 1;
-  border: solid ;
   background-color: #fff;
   flex-direction: column;
   width: 50%;
@@ -540,11 +525,9 @@ meter::-webkit-meter-optimum-value {
 
 .modal-main-content {
   padding: 20px;
-  border: solid;
 }
 
 .modal-question-container {
-  border: solid;
   display: flex;
   justify-content: space-between;
   background: #F2F5F7;
@@ -595,7 +578,6 @@ meter::-webkit-meter-optimum-value {
 
 .modal-response-container {
   background: #fff;
-  border: solid;
   padding: 10px;
   display: flex;
   flex-direction: column;

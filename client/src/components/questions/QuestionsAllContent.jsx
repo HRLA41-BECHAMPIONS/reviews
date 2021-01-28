@@ -102,11 +102,9 @@ class QuestionsAllContent extends React.Component {
             <AnswerQuestionModal currentQuestion={currentQuestion} closeModal={this.closeModal} displayModal={this.displayModal} updateQuestions={this.updateQuestions}/>
           </div>
           <QuestionsList questions={displayQuestions} displayModal={this.displayModal}/>
-          <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage} />
+          <QuestionsPageBar questions={this.state.questions} nextPage={this.nextPage} previousPage={this.previousPage} questionNumbers={[start + 1, end]}/>
         </div>
       )
-
-
   }
 }
 

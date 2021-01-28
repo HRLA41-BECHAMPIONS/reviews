@@ -21,15 +21,18 @@ class ControlBar extends React.Component {
         sortMethods[1]();
       } else if (sortBy === 'Most Helpful') {
         sortMethods[2]();
+      } else if (sortBy === 'Most Relevant') {
+        sortMethods[3]();
       }
     })
   }
 
   render() {
+    let { reviewsCount } = this.props;
     return (
       <div>
         <div className="control_bar_reviews_count">
-          1-6 of 3201 Reviews
+          {reviewsCount[1]}-{reviewsCount[2]} of {reviewsCount[0]} Reviews
         </div>
         <div className="sort_by_dropdown_container">
           <span>Sort By:</span>

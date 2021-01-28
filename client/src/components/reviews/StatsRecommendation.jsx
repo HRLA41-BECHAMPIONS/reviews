@@ -1,10 +1,19 @@
 import React from 'react';
 
-const StatsRecommendation = () => {
+const StatsRecommendation = (props) => {
+  let { reviews } = props
+  let recommendationCount = 0;
+  for (var i = 0; i < reviews.length; i++) {
+    let eachReview = reviews[i];
+    if (eachReview.recommend === 'Absolutely' || eachReview.recommend === 'Maybe' || eachReview.recommend === 'Likely') {
+      recommendationCount += 1;
+    }
+  }
+  let percentage = Math.floor((recommendationCount/reviews.length) * 100)
   return (
     <div className="stats_recommendation">
       <div className="stats_text">
-        111 OUT OF 125 (89%)
+        {recommendationCount} OUT OF {reviews.length} ({percentage}%)
       </div>
       OF REVIEWERS WOULD RECOMMEND THIS PRODUCT TO A FRIEND.
     </div>

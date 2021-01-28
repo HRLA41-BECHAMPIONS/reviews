@@ -49,6 +49,17 @@ app.get('/api/bechampions/products/:productId/reviews/sortMostHelpful', (req, re
     });
 });
 
+// retrieving all reviews (most relevant)
+app.get('/api/bechampions/products/:productId/reviews/sortMostRelevant', (req, res) => {
+  dbHelpers.Review.find({ productId: req.params.productId }).sort({yes: 'desc', createdAt: 'asc'})
+    .then((reviews) => {
+      res.status(200).send(reviews);
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    });
+});
+
 // voting yes for a review being helpful
 app.put('/api/bechampions/products/:productId/reviews/:_id/yes', (req, res) => {
   // eslint-disable-next-line no-underscore-dangle
@@ -117,7 +128,6 @@ app.get('/api/bechampions/products/:productId/questions/', (req, res) => {
 
 // to vote yes on a helpful response
 app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseId/yes', (req, res) => {
-  console.log(req.params)
   dbHelpers.Question.updateOne({ '_id': req.params._questionId, 'response._id': req.params._responseId}, { $inc: {'response.$.yes': 1}})
     .then((answer) => {
       res.status(200).send(answer);
@@ -129,7 +139,6 @@ app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseI
 
 // vote no on a response
 app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseId/no', (req, res) => {
-  console.log(req.params)
   dbHelpers.Question.updateOne({ '_id': req.params._questionId, 'response._id': req.params._responseId}, { $inc: {'response.$.no': 1}})
     .then((answer) => {
       res.status(200).send(answer);
@@ -141,7 +150,6 @@ app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseI
 
 // report a response
 app.put('/api/bechampions/products/:productId/questions/:_questionId/:_responseId/report', (req, res) => {
-  console.log(req.params)
   dbHelpers.Question.updateOne({ '_id': req.params._questionId, 'response._id': req.params._responseId}, { 'response.$.report': 'Reported'})
     .then((answer) => {
       res.status(200).send(answer);

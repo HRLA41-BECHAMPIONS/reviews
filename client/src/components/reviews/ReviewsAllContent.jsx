@@ -23,6 +23,7 @@ class ReviewsAllContent extends React.Component {
     this.getReviews = this.getReviews.bind(this);
     this.getReviewsMostHelpful = this.getReviewsMostHelpful.bind(this);
     this.getReviewsHighestRatings = this.getReviewsHighestRatings.bind(this);
+    this.sortMostRelevant = this.sortMostRelevant.bind(this);
     this.nextPage = this.nextPage.bind(this);
     this.previousPage = this.previousPage.bind(this);
   }
@@ -67,10 +68,22 @@ class ReviewsAllContent extends React.Component {
       });
   }
 
+  sortMostRelevant() {
+    axios.get('/api/bechampions/products/1/reviews/sortMostRelevant')
+    .then((response) => {
+      this.setState({
+        reviews: response.data
+      })
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
   nextPage() {
     this.setState((state) => ({
       start: state.start + 6,
-      end: state.end + 29
+      end: state.end + 6
     }), () => {
       console.log(this.state)
     })
@@ -79,7 +92,7 @@ class ReviewsAllContent extends React.Component {
   previousPage() {
     this.setState((state) => ({
       start: state.start - 6,
-      end: state.end - 29
+      end: state.end - 6
     }), () => {
       console.log(this.state)
     })
@@ -93,9 +106,9 @@ class ReviewsAllContent extends React.Component {
       <div className="reviews_all_content">
         <div className="review_highlights_container">
           <div className="left_ratings_container">
-            <StarsRating />
+            <StarsRating reviews={reviews}/>
             <RatingDistribution />
-            <StatsRecommendation />
+            <StatsRecommendation reviews={reviews}/>
           </div>
           <div className="pros_and_cons_container">
             <Pros />
@@ -109,10 +122,10 @@ class ReviewsAllContent extends React.Component {
             </div>
         </div>
         <div className="filter_control_bar_container">
-          <ControlBar sortMethods={[this.getReviews, this.getReviewsHighestRatings, this.getReviewsMostHelpful]}/>
+          <ControlBar sortMethods={[this.getReviews, this.getReviewsHighestRatings, this.getReviewsMostHelpful, this.sortMostRelevant]} reviewsCount={[reviews.length, start + 1, end]}/>
         </div>
         <ReviewList reviews={displayReviews} getReviews={this.getReviews}/>
-        <ReviewsPageBar reviews={this.state.reviews} nextPage={this.nextPage} previousPage={this.previousPage}/>
+        <ReviewsPageBar nextPage={this.nextPage} previousPage={this.previousPage} reviewsCount={[reviews.length, start + 1, end]}/>
       </div>
     )
   }
