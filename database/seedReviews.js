@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const dbHelpers = require('./index.js');
+const mongoose = require('mongoose');
 
 const badAdjectives = ['horrible just like jquery', 'not good', 'overrated', 'terrible just like css', 'so ugly that I burned it', 'buying this product broke my code...'];
 const goodAdjectives = ['awesome like react!', 'fascinating like trent', 'great just like my code', 'incredible like trent', 'stunning!', 'superb!!', 'wearing this to code all day!!!'];
@@ -82,6 +83,9 @@ const sampleData = generateReviews();
 dbHelpers.Review.create(sampleData)
   .then(() => {
     console.log('Seeded Database!');
+  })
+  .then(() => {
+    mongoose.disconnect();
   })
   .catch((err) => {
     console.log(err);

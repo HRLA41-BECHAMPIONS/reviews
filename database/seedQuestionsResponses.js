@@ -1,4 +1,5 @@
 const dbHelpers = require('./index.js');
+const mongoose = require('mongoose');
 
 const items = ['hoodie', 'shirt', 'product', 'pair of shorts', 'pair of socks', 'pair of pants'];
 // const users = ['kevin', 'bob', 'greg', 'matthew', 'jason', 'sam', 'trent', 'vini', 'ant', 'smith', 'dogo', 'rob', 'joshua', 'charmander', 'ashe', 'pika', 'peace'];
@@ -52,6 +53,9 @@ const sampleData = generateQuestions();
 dbHelpers.Question.create(sampleData)
   .then(() => {
     console.log('Seeded Database!');
+  })
+  .then(() => {
+    mongoose.disconnect();
   })
   .catch((err) => {
     console.log(err);
