@@ -11,14 +11,14 @@ class QuestionInstance extends React.Component {
   }
 
   render() {
-    let { eachQuestion } = this.props;
+    let { eachQuestion, displayModal } = this.props;
     return (
       <div className="question-instance-container">
         <div className="question-instance-text">
           {eachQuestion.description}
         </div>
         <div className="question-instance-answer-question-button-container">
-          <button className="answer-this-question-button">answer this question</button>
+          <button className="answer-this-question-button" onClick={() => {displayModal(eachQuestion)}}>answer this question</button>
         </div>
         <div className="question-instance-response-container">
           {eachQuestion.response[0].description}

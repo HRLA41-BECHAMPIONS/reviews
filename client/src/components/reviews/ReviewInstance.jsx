@@ -112,7 +112,7 @@ class ReviewInstance extends React.Component {
     }
 
     return (
-      <div className="review_instance_main_container">
+      <div className="review_instance_main_container" >
         <div className="review_instance_left_container">
           <div className="review_instance_stars_user_timestamp_container">
             <span className="review_instance_stars">{stars}</span>

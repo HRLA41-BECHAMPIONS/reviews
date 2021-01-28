@@ -6,7 +6,7 @@ const ReviewList = (props) => {
     <div className="review_list_container">
       {props.reviews.map((eachReview) => {
         return (
-          <ReviewInstance eachReview={eachReview} getReviews={props.getReviews}/>
+          <ReviewInstance eachReview={eachReview} getReviews={props.getReviews} key={eachReview._id}/>
         )
       })}
     </div>

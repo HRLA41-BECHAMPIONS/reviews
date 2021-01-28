@@ -5,7 +5,7 @@ const StarInstance = () => {
     <svg height="20" width="20" viewBox="0 0 25 25" className="star_instance" style={{paddingRight: "2px"}}>
       <defs>
         <linearGradient id="color1">
-          <stop offset="50%" style={{stopColor: "rgb(212, 53, 63)"}}></stop>
+          <stop offset="100%" style={{stopColor: "rgb(212, 53, 63)"}}></stop>
           <stop style={{stopColor: "rgb(153, 153, 153)", stopOpacity: '1' }}></stop>
         </linearGradient>
       </defs>
