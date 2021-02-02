@@ -5,6 +5,7 @@
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 .reviews-tab-container {
@@ -520,7 +521,8 @@ meter::-webkit-meter-optimum-value {
   flex-direction: column;
   width: 50%;
   margin-left: 25%;
-  position: relative;
+  position: absolute;
+  top: 6%;
 }
 
 .modal-main-content {
