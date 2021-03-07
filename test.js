@@ -1,4 +1,4 @@
-const seed = require('./database/seed.js');
+const seed = require('./database/seedReviews.js');
 
 describe('randomizer function', () => {
   test('generate a random value in the array', () => {
