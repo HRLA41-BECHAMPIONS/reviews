@@ -1,9 +1,5 @@
 import React from 'react';
 
-// const style1 = {
-//   color: 'black',
-//   font:
-// }
 const ReviewsTab = (props) => {
   return (
     <div className="reviews-tab-container" onClick={props.toggleReviews} >

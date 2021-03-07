@@ -14,10 +14,10 @@ const dotPositionFive = {marginLeft: '97%'};
 
 class ReviewInstance extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
 
-    }
+    };
     this.voteYes = this.voteYes.bind(this);
     this.voteNo = this.voteNo.bind(this);
     this.reportReview = this.reportReview.bind(this);

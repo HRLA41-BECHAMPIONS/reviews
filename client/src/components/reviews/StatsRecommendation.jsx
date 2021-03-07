@@ -1,7 +1,7 @@
 import React from 'react';
 
 const StatsRecommendation = (props) => {
-  let { reviews } = props
+  let { reviews } = props;
   let recommendationCount = 0;
   for (var i = 0; i < reviews.length; i++) {
     let eachReview = reviews[i];

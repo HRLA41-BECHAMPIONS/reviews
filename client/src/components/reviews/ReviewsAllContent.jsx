@@ -19,7 +19,6 @@ class ReviewsAllContent extends React.Component {
       start: 0,
       end: 6
     };
-    //bind your stuff!!!
     this.getReviews = this.getReviews.bind(this);
     this.getReviewsMostHelpful = this.getReviewsMostHelpful.bind(this);
     this.getReviewsHighestRatings = this.getReviewsHighestRatings.bind(this);
@@ -93,9 +92,7 @@ class ReviewsAllContent extends React.Component {
     this.setState((state) => ({
       start: state.start - 6,
       end: state.end - 6
-    }), () => {
-      console.log(this.state)
-    })
+    }))
   }
 
   render () {
