@@ -2,7 +2,7 @@
 
 ## Overview
 
-> Be Champions is a functional and visual mock-up product page of the sportswear brand Champion created by a team of 4. The app was built via a service-oriented architecture, where the modules were later integrated using a reverse-proxy server. I was responsible for the Reviews and Q&A service.
+Be Champions is a functional and visual mock-up product page of the sportswear brand Champion created by a team of 4. The app was built via a service-oriented architecture, where the modules were later integrated using a reverse-proxy server. I was responsible for the Reviews and Q&A service.
 
 ## Watch Demo
 
