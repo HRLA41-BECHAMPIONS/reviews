@@ -2,7 +2,6 @@ const dbHelpers = require('./index.js');
 const mongoose = require('mongoose');
 
 const items = ['hoodie', 'shirt', 'product', 'pair of shorts', 'pair of socks', 'pair of pants'];
-// const users = ['kevin', 'bob', 'greg', 'matthew', 'jason', 'sam', 'trent', 'vini', 'ant', 'smith', 'dogo', 'rob', 'joshua', 'charmander', 'ashe', 'pika', 'peace'];
 const users = ['DoubleCheckYouAreNotZoomedInWhileDoingCSS','iLOVEcss', 'scrimba', 'jQueryisgreatSike','HelpDesk', 'CovidSucks', 'ilovebobatea', 'TrentIsaGOD', 'HireMeChampion', 'HireMeNetflix', 'HireMeFacebook', 'HireMeGoogle', 'VenmoMe$5Bucks', 'DivDivDivDivDiv', 'MyBrainIsDone', 'iBrokeMyCode', 'CtrlC+CtrlV', 'EatSleepCodeRepeat', 'WhatIsAtree?', 'GroceryListsAllDay'];
 const emails = ['@yahoo.com', '@gmail.com', '@outlook.com', '@aol.com', '@microsoft.com', '@hackreactor.com'];
 const numbers = [3, 5, 10, 203, 121, 557, 32, 88, 433, 23, 2, 4, 8, 093, 3465, 123, 11, 17, 35, 91, 56, 69, 48, 57, 1];

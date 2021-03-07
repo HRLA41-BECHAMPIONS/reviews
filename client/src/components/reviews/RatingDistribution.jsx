@@ -6,7 +6,6 @@ class RatingDistribution extends React.Component {
     super();
     this.state = {
       reviews: []
-
     };
     this.getReviews = this.getReviews.bind(this);
   }

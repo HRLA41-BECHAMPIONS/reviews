@@ -101,22 +101,18 @@
 }
 
 .number_star_text {
-  /* width: 25px; */
   display: inline-block;
   margin-right: 10px;
 }
 
 .total_number_reviews_for_star_rating {
   width: 5px;
-  /* display: inline-block; */
   padding-left: 5px;
-  /* box-sizing: border-box; */
 }
 
 .pros_and_cons_container {
   display: flex;
   width: 100%;
-  /* padding-top: 10%; */
 }
 
 .pros_container {
@@ -160,7 +156,6 @@
   font-size: 16px;
   color: #202342;
   text-align: center;
-  /* font-weight: 600; */
 }
 
 .stats_text {
@@ -393,7 +388,6 @@
 }
 
 .verified_purchaser_icon {
-  /* width: 5%; */
   margin-right: 6px;
 }
 
@@ -639,7 +633,6 @@ meter::-webkit-meter-optimum-value {
   width: 97%;
   border-color: #bbb #ddd #ddd!important;
   padding: .5em 1em!important;
-  /* color: #666!important; */
   border-radius: .25em!important;
 }
 
@@ -658,7 +651,6 @@ meter::-webkit-meter-optimum-value {
   border-radius: .25em!important;
   font-size: 15px!important;
   padding: .5em 1em!important;
-  /* color: #666!important; */
 }
 
 .submission-email-container {
@@ -671,7 +663,6 @@ meter::-webkit-meter-optimum-value {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-content: unset; */
   height: 100px;
 }
 
@@ -733,7 +724,6 @@ meter::-webkit-meter-optimum-value {
   border-radius: 50%;
   color: white;
   border: none;
-  /* padding: 3px; */
   padding: 0px 6px;
   margin: 2px;
   font-weight: bold;

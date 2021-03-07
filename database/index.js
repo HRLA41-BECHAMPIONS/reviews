@@ -87,27 +87,5 @@ const questionSchema = new mongoose.Schema({
 
 const Question = mongoose.model('Question', questionSchema);
 
-// const answerSchema = new mongoose.Schema({
-//   description: String,
-//   createdAt: Number,
-//   user: String,
-//   email: String,
-//   yes: {
-//     type: Number,
-//     default: 0
-//   },
-//   no: {
-//     type: Number,
-//     default: 0,
-//   },
-//   report: {
-//     type: String,
-//     default: 'Report',
-//   }
-// })
-
-// const Answer = mongoose.model('Answer', answerSchema);
-
 module.exports.Review = Review;
 module.exports.Question = Question;
-// module.exports.Answer = Answer;
